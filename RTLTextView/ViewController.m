@@ -81,9 +81,9 @@
 
             textView.text = [linesArray componentsJoinedByString:@"\n"];
             
-#warning TODO
-//            textView.selectedRange = NSMakeRange(length, 0);
-//            [textView scrollRangeToVisible:NSMakeRange(length, 0)];
+            length -= [first_word length]+1;
+            textView.selectedRange = NSMakeRange(length, 0);
+            [textView scrollRangeToVisible:NSMakeRange(length, 0)];
             break;
         }
     }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5721AA37-3E6E-4457-B15E-FF3328AAF6FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RTLTextView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>614DC072F04F792F47AF0868E5B248EA65C033E4</key>
+		<string>https://github.com/Tulakshana/RTLTextView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RTLTextView.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>614DC072F04F792F47AF0868E5B248EA65C033E4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Tulakshana/RTLTextView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>614DC072F04F792F47AF0868E5B248EA65C033E4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>614DC072F04F792F47AF0868E5B248EA65C033E4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RTLTextView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
