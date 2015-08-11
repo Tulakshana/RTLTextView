@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "RTLTextView"
   s.version      = "1.0"
   s.summary      = "Right to left text input inside a UITextField and UITextView"
-  s.homepage     = "https://github.com/mstrchrstphr/LocationPickerView"
+  s.homepage     = "https://github.com/Tulakshana/RTLTextView"
   s.screenshots  = ""
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Tulakshana Weerasooriya" => "tula_post@yahoo.com" }
