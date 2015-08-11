@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="faseyha.ttf">
+            <string>VoguePSMT</string>
+            <string>VoguePSMT</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,24 +23,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-FU-Xc8">
-                                <rect key="frame" x="0.0" y="64" width="320" height="163"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-FU-Xc8" customClass="RTLTextView">
+                                <rect key="frame" x="16" y="142" width="288" height="163"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="NVv-7N-qNq"/>
+                                    <constraint firstAttribute="height" constant="163" id="bzH-rS-IoP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="VoguePSMT" family="A_Faseyha" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="neE-zD-dz4"/>
-                                </connections>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQo-UQ-IyK" customClass="RTLTextField">
+                                <rect key="frame" x="16" y="104" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IZP-tp-Hq9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="VoguePSMT" family="A_Faseyha" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EwG-FU-Xc8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="3J7-Uo-6qH"/>
-                            <constraint firstItem="EwG-FU-Xc8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="PJq-yn-oqY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EwG-FU-Xc8" secondAttribute="trailing" constant="-16" id="gWB-Pk-eQZ"/>
+                            <constraint firstItem="EwG-FU-Xc8" firstAttribute="top" secondItem="EQo-UQ-IyK" secondAttribute="bottom" constant="8" id="8ci-It-veI"/>
+                            <constraint firstItem="EQo-UQ-IyK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="B4O-hd-dyd"/>
+                            <constraint firstItem="EQo-UQ-IyK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="Tcl-2e-gR4"/>
+                            <constraint firstItem="EwG-FU-Xc8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="W3c-Q0-Zb5"/>
+                            <constraint firstItem="EwG-FU-Xc8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YeJ-vO-yHy"/>
+                            <constraint firstItem="EwG-FU-Xc8" firstAttribute="top" secondItem="EQo-UQ-IyK" secondAttribute="bottom" constant="8" id="gu8-xN-X1c"/>
+                            <constraint firstItem="EQo-UQ-IyK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rwR-l3-hqX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EwG-FU-Xc8" secondAttribute="bottom" constant="175" id="vGq-lz-sHN"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -42,9 +58,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="tView" destination="EwG-FU-Xc8" id="eUS-5V-5w4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

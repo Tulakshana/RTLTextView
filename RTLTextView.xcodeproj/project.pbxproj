@@ -15,6 +15,9 @@
 		F54FE7861B17968C00224B6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F54FE7841B17968C00224B6E /* LaunchScreen.xib */; };
 		F54FE7921B17968C00224B6E /* RTLTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE7911B17968C00224B6E /* RTLTextViewTests.m */; };
 		F54FE79F1B17978F00224B6E /* faseyha.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F54FE79E1B17978F00224B6E /* faseyha.ttf */; };
+		F553CDD31B7A5A7E00845CEB /* RTLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F553CDD21B7A5A7E00845CEB /* RTLTextView.m */; };
+		F553CDD61B7A5B6F00845CEB /* RTLTextViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F553CDD51B7A5B6F00845CEB /* RTLTextViewDelegate.m */; };
+		F553CDD91B7A638300845CEB /* RTLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F553CDD81B7A638300845CEB /* RTLTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,12 @@
 		F54FE7901B17968C00224B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F54FE7911B17968C00224B6E /* RTLTextViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTLTextViewTests.m; sourceTree = "<group>"; };
 		F54FE79E1B17978F00224B6E /* faseyha.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = faseyha.ttf; sourceTree = "<group>"; };
+		F553CDD11B7A5A7E00845CEB /* RTLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTLTextView.h; path = Classes/RTLTextView.h; sourceTree = "<group>"; };
+		F553CDD21B7A5A7E00845CEB /* RTLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTLTextView.m; path = Classes/RTLTextView.m; sourceTree = "<group>"; };
+		F553CDD41B7A5B6F00845CEB /* RTLTextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTLTextViewDelegate.h; path = Classes/RTLTextViewDelegate.h; sourceTree = "<group>"; };
+		F553CDD51B7A5B6F00845CEB /* RTLTextViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTLTextViewDelegate.m; path = Classes/RTLTextViewDelegate.m; sourceTree = "<group>"; };
+		F553CDD71B7A638300845CEB /* RTLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTLTextField.h; path = Classes/RTLTextField.h; sourceTree = "<group>"; };
+		F553CDD81B7A638300845CEB /* RTLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTLTextField.m; path = Classes/RTLTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,7 @@
 		F54FE7741B17968C00224B6E /* RTLTextView */ = {
 			isa = PBXGroup;
 			children = (
+				F553CDD01B7A5A2500845CEB /* Classes */,
 				F54FE79D1B17978F00224B6E /* Resources */,
 				F54FE7791B17968C00224B6E /* AppDelegate.h */,
 				F54FE77A1B17968C00224B6E /* AppDelegate.m */,
@@ -128,6 +138,19 @@
 				F54FE79E1B17978F00224B6E /* faseyha.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F553CDD01B7A5A2500845CEB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F553CDD11B7A5A7E00845CEB /* RTLTextView.h */,
+				F553CDD21B7A5A7E00845CEB /* RTLTextView.m */,
+				F553CDD41B7A5B6F00845CEB /* RTLTextViewDelegate.h */,
+				F553CDD51B7A5B6F00845CEB /* RTLTextViewDelegate.m */,
+				F553CDD71B7A638300845CEB /* RTLTextField.h */,
+				F553CDD81B7A638300845CEB /* RTLTextField.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F553CDD91B7A638300845CEB /* RTLTextField.m in Sources */,
+				F553CDD61B7A5B6F00845CEB /* RTLTextViewDelegate.m in Sources */,
 				F54FE77E1B17968C00224B6E /* ViewController.m in Sources */,
 				F54FE77B1B17968C00224B6E /* AppDelegate.m in Sources */,
+				F553CDD31B7A5A7E00845CEB /* RTLTextView.m in Sources */,
 				F54FE7781B17968C00224B6E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +456,7 @@
 				F54FE7971B17968C00224B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F54FE7981B17968C00224B6E /* Build configuration list for PBXNativeTarget "RTLTextViewTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +465,7 @@
 				F54FE79A1B17968C00224B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

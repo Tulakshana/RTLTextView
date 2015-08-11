@@ -1,67 +1,59 @@
 //
-//  ViewController.m
+//  RTLTextViewDelegate.m
 //  RTLTextView
 //
-//  Created by Tulakshana on 5/29/15.
+//  Created by Tulakshana on 8/11/15.
 //  Copyright (c) 2015 Tulakshana. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RTLTextViewDelegate.h"
 
-#define FONT_USED @"A_Faseyha"
-#define FONT_SIZE 25
 
-@interface ViewController ()<UITextViewDelegate>{
-    IBOutlet UITextView *tView;
-    CGRect previousRect;
-}
+
+@interface RTLTextViewDelegate()
+
+
 
 @end
 
-@implementation ViewController
+@implementation RTLTextViewDelegate
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    tView.font = [UIFont fontWithName:FONT_USED size:FONT_SIZE];
-    [tView setSpellCheckingType:UITextSpellCheckingTypeNo];
-    [tView setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-    [tView setAutocorrectionType:UITextAutocorrectionTypeNo];
-    
-    previousRect = CGRectZero;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITextField Delegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if ([self shouldReverse:string]) {
+        [self reverseTextField:textField range:range newText:string];
+        return FALSE;
+    }
+    return TRUE;
 }
 
 #pragma mark - UITextView Delegate
 -(BOOL) textView:(UITextView*) textView shouldChangeTextInRange:(NSRange) range replacementText:(NSString*) text {
-//    CGRect rect = [textView caretRectForPosition:textView.selectedTextRange.start];
-//    NSLog(@"shouldChangeTextInRange - Cursor: x %f, y %f",rect.origin.x,rect.origin.y);
+    //    CGRect rect = [textView caretRectForPosition:textView.selectedTextRange.start];
+    //    NSLog(@"shouldChangeTextInRange - Cursor: x %f, y %f",rect.origin.x,rect.origin.y);
     
     if ([self shouldReverse:text]) {
-        [self reverseText:textView range:range newText:text];
-        [self wrapText:textView];
+        [self reverseTextView:textView range:range newText:text];
+        [self wrapTextView:textView];
         return FALSE;
     }
     return TRUE;
-
+    
 }
 
 
 - (void)textViewDidChange:(UITextView *)textView{
+    //if text is not reversed this gets called
+    [self wrapTextView:textView];
     
-    [self wrapText:textView];
-
     
 }
 
 #pragma mark -
 
-- (void)wrapText:(UITextView *)textView{
+
+
+- (void)wrapTextView:(UITextView *)textView{
     NSMutableArray *linesArray = [NSMutableArray arrayWithArray:[textView.text componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]]];
     NSInteger length = 0;
     for (int i = 0; i < [linesArray count]; i++) {
@@ -78,7 +70,7 @@
             }else {
                 [linesArray insertObject:first_word atIndex:i+1];
             }
-
+            
             textView.text = [linesArray componentsJoinedByString:@"\n"];
             
             length -= [first_word length]+1;
@@ -90,17 +82,29 @@
     
 }
 
-- (void)reverseText:(UITextView *)textView range:(NSRange)range newText:(NSString *)text{
-//    NSLog(@"text: %@\nrange:%ld,%ld",text,(unsigned long)range.length,(unsigned long)range.location);
+- (void)reverseTextView:(UITextView *)textView range:(NSRange)range newText:(NSString *)text{
+    //    NSLog(@"text: %@\nrange:%ld,%ld",text,(unsigned long)range.length,(unsigned long)range.location);
     NSString *before = [textView.text substringToIndex:range.location];
-//    NSLog(@"before: %@", before);
+    //    NSLog(@"before: %@", before);
     NSString *after = [textView.text substringFromIndex:range.location];
-//    NSLog(@"after: %@", after);
+    //    NSLog(@"after: %@", after);
     
     textView.text = [NSString stringWithFormat:@"%@%@%@",before,text,after];
-
+    
     textView.selectedRange = range;
     [textView scrollRangeToVisible:range];
+}
+
+- (void)reverseTextField:(UITextField *)textfield range:(NSRange)range newText:(NSString *)text{
+    //    NSLog(@"text: %@\nrange:%ld,%ld",text,(unsigned long)range.length,(unsigned long)range.location);
+    NSString *before = [textfield.text substringToIndex:range.location];
+    //    NSLog(@"before: %@", before);
+    NSString *after = [textfield.text substringFromIndex:range.location];
+    //    NSLog(@"after: %@", after);
+    
+    textfield.text = [NSString stringWithFormat:@"%@%@%@",before,text,after];
+    
+    textfield.selectedTextRange = [textfield textRangeFromPosition:textfield.beginningOfDocument toPosition:[textfield positionFromPosition:textfield.beginningOfDocument offset:0]];
 }
 
 - (BOOL)shouldReverse:(NSString *)text{
@@ -116,5 +120,6 @@
     NSRange newlineRange = [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]];
     return (newlineRange.location != NSNotFound);
 }
+
 
 @end
