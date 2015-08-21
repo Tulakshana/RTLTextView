@@ -1,5 +1,5 @@
 # RTLTextView
 Implementation of right to left (RTL) text input using an UITextView.
 
-# CocoaPod
+## CocoaPod
 pod 'RTLTextView', :git => 'https://github.com/Tulakshana/RTLTextView.git'
